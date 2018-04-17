@@ -31,6 +31,8 @@ var createSpan=x=>{
 var createHTag=x=>{
     return '<h'+x.num+'>'+x.val+'</h'+x.num+'>';
 }
+
+
 var createDiv=x=>{
     return '<div id="'+x.id+'" class="'+x.clazz+'"></div>';
 }
@@ -64,4 +66,15 @@ var createEmail=()=>{
 	return '<div class="site-email-signup-v1 site-email-signup">'
 	+'<a id="site-email-signup" href="/customer_service/contact_us.tmpl" title="이메일 문의하기" class="site-email-signup__link jquery-once-1-processed"><i class="icon--envelope site-email-signup__link-icon"></i></a>'
 	+'</div>';
+}
+
+var createItem=x=>{
+	return /*<span class="site-bag__contents-subtotal__title">총금액</span>
+    <span class="site-bag__contents-subtotal__value">
+    ₩ 81,600
+</span>*/
+}
+
+var createImg=x=>{
+	return '<img src="'+$.image()+'/'+x.img+'" alt="Matte Lipstick" title="Matte Lipstick">';
 }
