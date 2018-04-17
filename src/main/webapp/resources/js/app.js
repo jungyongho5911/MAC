@@ -3,12 +3,12 @@ app = (()=>{
 	var init = x =>{
 	    $.getScript(x+'/resources/js/router.js',()=>{
 	        $.extend(new Router(x));
-	        app.nav.onCreate();
+	        app.main.onCreate();
 	    })
 	};
 	return {init:init};
 })();
-app.nav=(()=>{
+app.main=(()=>{
 	var $wrapper,context,view,image;
 	var onCreate=()=>{
 		 $wrapper = $('#wrapper');
@@ -153,6 +153,65 @@ app.nav=(()=>{
 					clazz:'',
 					val:'81600'		
 				})).attr('style','font-size: 25px;').appendTo('#div-checkout');
+				$(createDiv({
+					id:'div-container',
+					clazz:'container'
+				})).appendTo($content);
+				$(createDiv({
+					id:'myCarousel',
+					clazz:'carousel slide'
+				})).attr('data-ride','carousel').appendTo('#div-container');
+				$(createOl({
+					id:'ol-carousel',
+					clazz:'carousel-indicators'
+				})).appendTo('#myCarousel');
+				$(createLI({
+					id:'li-0',
+					clazz:'active',
+					val:''
+				})).attr('data-target','#myCarousel')
+				.attr('data-slide-to','0')
+				.appendTo('#ol-carousel');
+				$(createLI({
+					id:'li-1',
+					clazz:'active',
+					val:''
+				})).attr('data-target','#myCarousel')
+				.attr('data-slide-to','1')
+				.appendTo('#ol-carousel');
+				$(createLI({
+					id:'li-2',
+					clazz:'active',
+					val:''
+				})).attr('data-target','#myCarousel')
+				.attr('data-slide-to','2')
+				.appendTo('#ol-carousel');
+				$(createDiv({
+					id:'div-inner',
+					clazz:'carousel-inner'
+				})).appendTo('#Div-myCarousel');
+				$(createDiv({
+					id:'div-item-active',
+					clazz:'item active'
+				})).appendTo('#div-inner');
+				$(createImg({
+					img:'item0.jpg'
+				})).attr('style','width:50%').appendTo('#div-item-active');
+				$(createDiv({
+					id:'div-item-active1',
+					clazz:'item'
+				})).appendTo('#div-inner');
+				$(createImg({
+					img:'Hydrangeas.jpg'
+				})).attr('style','width:50%').appendTo('#div-item-active1');
+				$(createDiv({
+					id:'div-item-active2',
+					clazz:'item'
+				})).appendTo('#div-inner');
+				$(createImg({
+					img:'Hydrangeas.jpg'
+				})).attr('style','width:50%').appendTo('#div-item-active2');
+				$('#div-inner').append($(createMainImg()));
 				
 	         });
 			
@@ -317,6 +376,10 @@ app.login=(()=>{
 			.on('click',e=>{
 				order(e);
 			});
+			$(createATag({
+   			 id:'a-find-store',
+   			 val:'관리자'
+   		 })).attr('style','color:white;font-size: 20px; padding:10px;').appendTo('#div-second');
          });
 	 };
 	 var order=x=>{
@@ -361,8 +424,60 @@ app.login=(()=>{
 				})).attr('style','border-radius: 0; height:60px; width:300px; margin-left:550px; background: black; color: white;')
 				.appendTo('#div-order-buy-now')
 				.on('click',e=>{
-					
-				});			
+				});	
+			 $('#div-order-buy-now').append($(createDiv({
+				 id:'div-order-item-title',
+				 clazz:''
+			 })));
+			 $(createGridDiv())
+			 .attr('style','margin-left:150px;')
+			 .appendTo('#div-order-item-title');
+			 $(createGridDivContent({
+				 val:'제품'
+			 })).attr('style','width: 200px; margin-right: 300px;')
+			 .appendTo('#div-order-grid');
+			 $(createGridDivContent({
+				 val:'가격'
+			 })).attr('style','width:150px; margin-left: 20;')
+			 .appendTo('#div-order-grid');
+			 $(createGridDivContent({
+				 val:'수량'
+			 })).attr('style','width:150px; margin-left: 20;')
+			 .appendTo('#div-order-grid');
+			 $(createGridDivContent({
+				 val:'총합계'
+			 })).attr('style','width:150px;').appendTo('#div-order-grid');
+			 $('#div-order-item-title')
+			 .append($(createDiv({
+				 id:'div-order-item-basket'
+			 })));
+			 $(createGridDiv1()).appendTo('#div-order-item-basket');
+			 $(createGridDivContent({
+				 val:'<img src="'+$.image()+'/'+'item1.jpg'+'" alt="Matte Lipstick" title="Matte Lipstick">'
+			 })).attr('style','margin-left:130px;')
+			 .appendTo('#div-order-grid1');
+			 $(createGridDivRow({
+				 val:'대즐섀도우',
+				 eval:'DAZZLESHADOW',
+				 weight:'1g',
+				 color:'겟피지컬'
+			 })).attr('style','width:100px; font-size:15px; margin-top:40px;')
+			 .appendTo('#div-order-grid1');
+			 $(createGridDivRowPrice({
+				 prcie:'￦32,000',
+				 sprcie:'￦27,200',
+				 sale:'(15%)'
+			 })).attr('style','font-size: 15px;width: 50px;margin-left:230px; margin-top:50px;')
+			 .appendTo('#div-order-grid1');
+			 $(createGridDivContent({
+				 val:'1'
+			 })).attr('style','font-size: 15px;width: 100px;margin-top:50px; margin-left:60px;')
+			 .appendTo('#div-order-grid1');
+			 $(createGridDivContent({
+				 val:'1'
+			 })).attr('style','font-size: 15px;width: 100px;margin-top:50px;')
+			 .appendTo('#div-order-grid1');
+
 		});
 		} 
 	 var content=()=>{

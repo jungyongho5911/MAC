@@ -1,4 +1,5 @@
 insert into customer values('kim','1','김유신','kim@naver.com','010-1234-1234','1111',now());
+insert into customer values('admin','admin','관리자','admin@naver.com','010-1234-1234','1111',now());
 insert into customer values('lee','2','이이','lee@naver.com','010-1234-1234','2222',now());
 insert into customer values('hong','3','홍길동','hong@naver.com','010-1234-1234','3333',now());
 insert into customer values('park','4','박창진','park@naver.com','010-1234-1234','4444',now());
