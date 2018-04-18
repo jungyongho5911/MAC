@@ -187,6 +187,28 @@ app.main=(()=>{
 	    			 clazz : 'wrap-tnb-menu'
 	    		 })).attr('style','background:black; height:60px;')
 	    		 .appendTo('#j-div-nav');
+				 $(createLI({
+	    			 id:'j-li-nav-mac',
+	    			 clazz:'',
+	    			 val:(createATag({
+	    				 id:'j-a-nav-mac',
+	    				 val:'M·A·C'
+	    			 }))
+	    		 })).attr('style','color:white;font-size: 20px; margin-left:100px;')
+	    		 .appendTo('#j-div-header');
+				 $('#j-a-nav-mac').attr('style','color:white');
+				 
+				 $(createDiv({
+	    			 id : 'j-div-nav-new-item',
+	    			 clazz : 'dropdown'
+	    		 })).appendTo('#j-div-header');
+				 $(createButton({
+					 id:'j-btn-nav-new-item',
+					 clazz:' btn-primary dropdown-toggle',
+					 val:'신제품'
+				 })).attr().appendTo()
+				 
+				 
 				 
 				 $(createDiv({
 	    			 id : 'div-main',
