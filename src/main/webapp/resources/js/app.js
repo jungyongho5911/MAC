@@ -1132,6 +1132,7 @@ app.login=(()=>{
 					id : 'div-login-box',
 					clazz : 'div-login-box'
 				})));
+			 
 			 $(createButton({
 					id : 'input-login-box',
 					 clazz : 'btn-login',
